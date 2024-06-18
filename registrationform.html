@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pet registration </title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color:rgb(248, 247, 247);
+    }
+
+    header {
+        background-color: rgb(95, 242, 156);
+        color:black;
+        padding: 1px;
+        text-align: center;
+    }
+
+    main {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(73, 216, 123, 0.1);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(43, 224, 97);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #555;
+    }
+</style>
+
+<body>
+    <header>
+        <b><h1>Pet Adoption Platform</h1></b>
+        
+    </header>
+<main>
+    <form id="registration-form">
+        <h2>Register</h2>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Register</button>
+
+        <div id="success-message" style="display: none; color: green; margin-top: 10px;">
+            Registration successful! Thank you for registering.
+        </div>
+    </form>
+    
+</main>
+<script>
+    document.getElementById('registration-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form data
+        var formData = new FormData(this);
+
+        // Display form data (you can replace this with sending data to a server)
+        for (var pair of formData.entries()) {
+            console.log(pair[0] + ': ' + pair[1]);
+        }
+
+        // Simulating successful registration
+        // Here you can perform actual validation and submit the form to a server
+        // For now, we'll just show the success message
+        document.getElementById('success-message').style.display = 'block';
+
+        // You can reset the form after successful submission if needed
+        // this.reset();
+    });
+</script>
+</body>
+</html>
